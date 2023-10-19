@@ -3,10 +3,14 @@ import { HTMLAttributes, ReactNode } from "react";
 import { UiLogo } from "./ui-logo";
 
 export type UiHeaderProps = HTMLAttributes<HTMLElement> & {
-  content?: ReactNode;
+  contentElement?: ReactNode;
 };
 
-export const UiHeader = ({ className, content, ...props }: UiHeaderProps) => {
+export const UiHeader = ({
+  className,
+  contentElement,
+  ...props
+}: UiHeaderProps) => {
   return (
     <header
       {...props}
@@ -19,7 +23,7 @@ export const UiHeader = ({ className, content, ...props }: UiHeaderProps) => {
         <UiLogo className="w-12 h-12" />
         <h1 className="text-2xl font-semibold">WBS</h1>
       </div>
-      {content}
+      {contentElement}
     </header>
   );
 };
