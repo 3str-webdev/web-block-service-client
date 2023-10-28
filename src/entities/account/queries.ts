@@ -22,9 +22,9 @@ export const useUpdateAccountMutation = () => {
       // Оптимистичное обновление для улучшения UX
       queryClient.setQueryData(accountKey, data);
     },
-    onSettled: async () => {
+    onSettled: () => {
       // Всё равно оставляем фоновою инвалидацию для стабильности
-      await queryClient.invalidateQueries({ queryKey: accountKey });
+      queryClient.removeQueries();
     },
   });
 };
