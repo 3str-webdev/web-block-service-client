@@ -1,3 +1,4 @@
+import { AddBlockItemForm, BlockList } from "@/features/block-list";
 import { ToggleBlockButton } from "@/features/toggle-block";
 import { UiHeader } from "@/shared/uikit/ui-header";
 import { ProfileHeader } from "@/widgets/profile-header";
@@ -10,7 +11,10 @@ export function HomePage() {
         <aside className="p-5 border-r border-purple-700 bg-slate-50">
           <ToggleBlockButton className="w-full" />
         </aside>
-        <main className="p-5">...</main>
+        <main className="p-5">
+          <AddBlockItemForm />
+          <BlockList className="mt-5" />
+        </main>
       </div>
     </div>
   );
